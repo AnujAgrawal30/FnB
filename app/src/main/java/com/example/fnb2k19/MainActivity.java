@@ -1,5 +1,6 @@
 package com.example.fnb2k19;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -29,9 +30,18 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        Toast.makeText(getApplicationContext(), currentUser.getDisplayName(), Toast.LENGTH_LONG).show();
+//        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        Toast.makeText(getApplicationContext(), currentUser.getDisplayName(), Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        if (FirebaseAuth.getInstance().getCurrentUser() != null){
+            Toast.makeText(getApplicationContext(), "skdfjl", Toast.LENGTH_LONG).show();
+            finish();
+            System.exit(0);
+        }
+    }
 }
