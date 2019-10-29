@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">FnB 2k19</string>
-    <string name="title_home">Homeeeeeee</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="app_name">FnB 2019</string>
+    <string name="title_home">Profile</string>
+    <string name="title_dashboard">Coupons</string>
     <string name="title_notifications">Notifications</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_login">Anuj Machaxxx!</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
