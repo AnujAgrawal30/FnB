@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ import com.example.fnb2k19.R;
 import com.example.fnb2k19.ui.login.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
 
 public class HomeFragment extends Fragment {
 
@@ -47,9 +49,13 @@ public class HomeFragment extends Fragment {
 //        });
 
 
+        ImageView profile_img = root.findViewById(R.id.profile_img);
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        Toast.makeText(getContext(), currentUser.getPhotoUrl().toString(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(getContext(), currentUser.getPhotoUrl().toString(), Toast.LENGTH_LONG).show();
+        Picasso.with(getContext())
+                .load(currentUser.getPhotoUrl())
+                .into(profile_img);
         return root;
     }
 
